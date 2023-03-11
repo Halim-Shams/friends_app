@@ -1,0 +1,46 @@
+<div class="flex flex-col w-full">
+  <div id="friends" class="min-w-full">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Username
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Email
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Twitter
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+              <% @friends.each do |friend| %>
+                <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <%= friend.username %>
+                    </th>
+                    <td class="px-6 py-4">
+                        <%= friend.email %>
+                    </td>
+                    <td class="px-6 py-4">
+                        <%= friend.twitter %>
+                    </td>
+                    <td class="flex gap-10 px-4 py-4">
+                        <%= link_to "Show", friend, class:'font-medium text-blue-600 dark:text-blue-500 hover:underline' %>
+                        <%= link_to "Edit", edit_friend_path(friend), class:'font-medium text-blue-600 dark:text-blue-500 hover:underline' %>
+                    </td>
+                </tr>
+              <% end %>
+            </tbody>
+        </table>
+    </div>
+  </div>
+  <div class="flex items-center self-end justify-between mt-4">
+    <%= link_to 'New friend', new_friend_path, class: "rounded-lg py-2.5 px-4 bg-gray-900 text-blue-400 block font-medium" %>
+  </div>
+</div>

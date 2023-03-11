@@ -1,0 +1,32 @@
+<div id="<%= dom_id friend %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">First name:</strong>
+    <%= friend.first_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Last name:</strong>
+    <%= friend.last_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Username:</strong>
+    <%= friend.username %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Email:</strong>
+    <%= friend.email %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Twitter:</strong>
+    <%= friend.twitter %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this friend", friend, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this friend', edit_friend_path(friend), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

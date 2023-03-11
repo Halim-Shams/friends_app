@@ -13,8 +13,11 @@
   </head>
 
   <body>
-  <%= render 'layouts/header' %>
-    <main class="container flex px-5 mx-auto">
+    <%= render 'layouts/header' %>
+    <main class="container flex flex-col items-center justify-center px-5 mx-auto mt-10 max-w-7xl">
+      <% if notice %>
+        <%= render 'layouts/alerts' %>
+      <% end %>
       <%= yield %>
     </main>
   </body>
